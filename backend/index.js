@@ -10,8 +10,9 @@ const app=express();
 app.use(express.json());
 
 app.get('/',(req,res)=>{
-    return res.status(244).send("hello");
+    return res.status(200).send("hello");
 })
+
 
 //option 1 allow all origin with default of cors
 app.use(cors());

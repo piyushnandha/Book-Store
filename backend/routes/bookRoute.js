@@ -10,7 +10,7 @@ router.post('/',async(req,res)=>{
         if(
             !req.body.title||
             !req.body.author||
-            !req.body.publishYear
+                !req.body.publishYear
         ){
             return res.send(404).send("Enter all details")
         }
@@ -23,7 +23,6 @@ router.post('/',async(req,res)=>{
         
         const book=await Book.create(newBook);
         return res.status(201).send(book);
-        
     } catch (error) {
         console.log(error);
         res.status(500).send({message:error.message})
